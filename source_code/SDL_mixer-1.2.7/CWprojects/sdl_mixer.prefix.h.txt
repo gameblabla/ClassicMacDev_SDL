@@ -1,0 +1,17 @@
+
+#ifdef macintosh
+# include "string_funcs.h"
+#endif
+
+#define WAV_MUSIC
+
+#define MOD_MUSIC
+
+/*
+#define MP3_MUSIC
+*/
+
+#define MID_MUSIC
+#define USE_TIMIDITY_MIDI
+#define USE_NATIVE_MIDI
+
