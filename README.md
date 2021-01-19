@@ -35,9 +35,10 @@ that you can revert by looking at my changes. I might make 8.5 support optional 
 
 https://nondisplayable.ca/2017/12/20/sdl-on-classic-mac.html
 
-I have compiled SDL 1.2.15 and it doesn't seem to fix the issue with keysym unfortunately.
-This could be a regression due to a patch that was merged late in its lifespan related to input, not sure. (See https://github.com/spurious/SDL-mirror/commit/3b3b5c04292e4d6eb8b5a175af1d1990496a3681#diff-98b80a52390da050b6836ce9c3d7248ec4b6378b65e6ddaaaf53f14dda0b9dc9)
-It's very possible however, that it was never fixed. You can use scancode as a workaround.
+This guy encountered an issue with keysym not working properly with SDL 1.2.15.
+I could confirm this issue happens when the code is compiled with CodeWarrior but it doesn't happen with Retro68 !
+
+Some of the keyboard inputs however, don't seem to be mapped like expected but some others do.
 
 # Other info
 
