@@ -1,5 +1,0 @@
-Screen is at 32 bits per pixel
-Screen is in system memory
-Sprite is in system memory
-Sprite blit uses RLE acceleration
-65.88 frames per second

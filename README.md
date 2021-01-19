@@ -1,24 +1,35 @@
 Here, you will find some files and resources on how to develop apps for Mac OS 8.1+ using SDL 1.2.
 
 # Requirements
-CodeWarrior 5+ (i only had some luck with CodeWarrior 5 but later versions should work)
-32MB of RAM (for CW5, possibly more for later versions)
-Mac OS 8.1+ with a PPC processor (68k on 8.1 was untested)
+Retro68 on a Linux, Windows or Mac OSX
+Mac OS 8.1+ with a PPC processor (68k on 8.1 was untested, earlier versions are also untested)
 StuffIt expander to decompress the archive
+MPW header files (you can take them from CodeWarrior)
 
-Don't use JIT for Sheepshaver : it will prevent you from compiling large packages like SDL from source !
 
-# Installation
+My makefiles assumes that RETRO68 as an envirionment variable exists.
 
-Decompress SDL_binaries.sit with StuffIt Expander and put the SDL folder somewhere.
-When you create a new project, make sure to :
-- Import QuickTimeLib and StdcLib (or stdlib, forgot) from Codewarrior's Support lib folder. You can find it with Sherlock.
-- Add all of the libraries in your project.
-- Add the include folder in the Project's settings.
-- Make sure to increase the heap to 4096 in your project's settings.
+It should point to :
 
-Assuming you don't have any issues with CodeWarrior's headers themselves, you should be good.
-For Worship Vector, i had to disable the code related to wchar_t before it would compile properly.
+/to/path/Retro68-build/toolchain/bin
+
+Where your toolchain is.
+
+
+Make sure to git clone the following repositories :
+
+https://github.com/gameblabla/SDL12_mac
+
+https://github.com/gameblabla/SDL12_mixer_mac
+
+Then use the Makefile.mac to compile it.
+
+To compile it, run make -f Makefile.mac.
+
+You can then compile pretty much most SDL 1.2 apps as long as they don't use timer, threads, OpenGL or joysticks.
+
+(Joystick support can work on 8.5 or later but i wanted to have compatibility with 8.1 so i disabled it, this is something
+that you can revert by looking at my changes. I might make 8.5 support optional later)
 
 # Also read
 
@@ -35,5 +46,4 @@ you have to do the conversion yourself.
 For a relative path, instead of doing "image/log.txt", do instead ":image:log.txt".
 If you just want to write a file to the root directory of the executable, "log.txt" will do as well.
 
-SDL 1.2 originally required Mac OS 8.5 but disabling the atomic related functions (in particular in the audio code)
-allowed it to work on Mac OS 8.1 without ill effects.
+SDL 1.2 originally required Mac OS 8.5 but disabling the atomic related functions (in particular in the audio code) allowed it to work on Mac OS 8.1 without ill effects.
