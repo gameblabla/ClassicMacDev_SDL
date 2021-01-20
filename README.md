@@ -2,10 +2,9 @@ Here, you will find some files and resources on how to develop apps for Mac OS 8
 
 # Requirements
 Retro68 on a Linux, Windows or Mac OSX
-Mac OS 8.1+ with a PPC processor (68k on 8.1 was untested, earlier versions are also untested)
+Mac OS 8.1+ with a PPC or M68K processor (m68k support was only tested on several emulators)
 StuffIt expander to decompress the archive
 MPW header files (you can take them from CodeWarrior)
-
 
 My makefiles assumes that RETRO68 as an envirionment variable exists.
 
@@ -24,12 +23,22 @@ https://github.com/gameblabla/SDL12_mixer_mac
 
 Then use the Makefile.mac to compile it.
 
-To compile it, run make -f Makefile.mac.
+To compile it, run make -f Makefile.mac for PPC and make -f Makefile.macm68k for M68k.
 
 You can then compile pretty much most SDL 1.2 apps as long as they don't use timer, threads, OpenGL or joysticks.
 
 (Joystick support can work on 8.5 or later but i wanted to have compatibility with 8.1 so i disabled it, this is something
 that you can revert by looking at my changes. I might make 8.5 support optional later)
+
+# Ports
+
+I will also post my ports that use SDL 1.2 for Mac OS classic here.
+
+- Worship Vector (PPC & M68k)
+(Source code : https://github.com/gameblabla/worship-vector/tree/macosclassic)
+
+The M68k version supports only 640x480 8bpp whereas the PPC version supports all of the resolutions.
+Of course, you may want to decrease your monitor's resolution for the PPC version if it ends up being too slow.
 
 # Also read
 
