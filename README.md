@@ -40,6 +40,10 @@ I will also post my ports that use SDL 1.2 for Mac OS classic here.
 The M68k version supports only 640x480 8bpp whereas the PPC version supports all of the resolutions.
 Of course, you may want to decrease your monitor's resolution for the PPC version if it ends up being too slow.
 
+- Ganbare Natsuki-San (PPC)
+No MIDI playback (it doesn't seem to work at all) but sound effects still.
+It might require a G3 or even a G4 despite running at 8bpp.
+
 # Also read
 
 https://nondisplayable.ca/2017/12/20/sdl-on-classic-mac.html
